@@ -1,34 +1,39 @@
-# Telco Analysis Dashboard
+Churn Analysis and Rediction on  WA_Fn-UseC_-Telco-Customer-Churn.csv
 
-## Overview
-This Streamlit dashboard provides an interactive analysis of Telco customer data. It aims to help you explore relationships between various customer attributes and the likelihood of churn.
+##A streamlit Dashboard 
+![image](https://github.com/user-attachments/assets/4d765efb-7971-4fd2-a531-8ca076fc6211)
 
-## Features
-- **Descriptive Analysis**: Analyze relationships between selected attributes and churn.
-- **Gender Distribution**: Visualize the distribution of male and female customers.
-- **Churn Counts**: View the overall counts of churn and non-churn customers.
-- **Customer Distribution Analysis**: Explore customer distribution based on gender, senior citizenship, partners, and dependents.
-- **Customer Distribution Plotly Go Chart**: A graphical representation of customer distribution using Plotly Go Chart.
-- **Customer Loyalty Analysis**: Understand the distribution of customers with tenure greater than 12 months (loyal) and less than 12 months (new).
-- **Gender Analysis for Loyal and New Customers**: Explore the distribution of loyal and new customers based on gender.
-- **Churn Analysis**: Analyze churn based on customer loyalty and contract types.
-- **Contract-wise Churn Analysis**: Visualize churn rates based on different contract types.
-- **Churn Counts Based on Total Charges**: Explore how total charges relate to churn.
+1. **Dashboard Styling**:
+   - Custom styles using `st.markdown` for hover effects, headings, and animation.
+   - A key feature is the dynamic title using the `hover-effect` and `change_content` class, which changes based on different aspects of churn analysis.
 
-## Instructions
-- **Get Desire Relations and Prediction**: Use the sidebar to select attributes and analyze their relationship with churn. Click the "Analyze" button to generate a bar chart. Further refine the analysis by selecting additional attributes.
-- **Gender Distribution and Churn Counts**: View the distribution of male and female customers. Explore the total counts of churn and non-churn customers.
-- **Customer Distribution Analysis**: Analyze customer distribution based on gender, senior citizenship, partners, and dependents.
-- **Customer Distribution Plotly Go Chart**: Explore a graphical representation of customer distribution using Plotly Go Chart.
-- **Customer Loyalty Analysis**: Understand the distribution of loyal and new customers based on tenure.
-- **Gender Analysis for Loyal and New Customers**: Explore the distribution of loyal and new customers based on gender.
-- **Churn Analysis**: Analyze churn based on customer loyalty and contract types.
-- **Contract-wise Churn Analysis**: Visualize churn rates based on different contract types.
-- **Churn Counts Based on Total Charges**: Explore how total charges relate to churn.
+2. **Sidebar Controls**:
+   - You’ve used Streamlit's sidebar to allow users to select different customer features to explore their relationship with churn.
+   - There are three main levels of selection for analyzing churn relations using Plotly bar charts.
+![image](https://github.com/user-attachments/assets/a84d1271-c6ef-4d78-99f4-c682a0304a06)
 
-## Additional Information
-The dashboard uses Streamlit for interactivity and Plotly for visualizations. The data source is a CSV file named "WA_Fn-UseC_-Telco-Customer-Churn.csv." Feel free to customize and extend the analysis based on your needs.
+3. **Logistic Regression Model**:
+   - The script has a section to perform logistic regression on the churn data.
+   - Label encoding is used to convert categorical features, followed by training and evaluation using a logistic regression model.
+   - A confusion matrix is plotted using Plotly's heatmap.
 
-**Note**: The dashboard may take a moment to load, and interactions with the controls may trigger data processing.
+4. **Gender Distribution & Churn**:
+   - Pie charts show the distribution of male and female customers, as well as churn vs. non-churn customers.
 
-This dashboard is designed for exploratory analysis purposes. Use the insights gained responsibly and consider additional statistical analyses for robust conclusions.
+5. **Customer Analysis Based on Attributes**:
+   - Bar plots showing customer distribution based on attributes like `SeniorCitizen`, `Dependents`, and `Partner` are created using both `plotly.express` and `plotly.graph_objects`.
+
+6. **Loyalty vs. New Customers**:
+   - Customers are divided into `loyal` (tenure ≥ 12 months) and `new` (tenure < 12 months), with bar charts visualizing their distribution by gender.
+
+7. **Churn Analysis**:
+   - You’ve included churn analysis based on customer loyalty and contract type, showing how churn varies across different groups.
+
+### Suggested Improvements:
+
+- **Improve Code Reusability**: You can refactor the repeated sections of code (like loading data and encoding features) into functions to improve readability and maintainability.
+  
+- **Dynamic Label Handling**: For the dynamic content like `hover-effect` and `change_content`, you might want to parameterize these so that they can be reused in multiple sections without hardcoding the HTML repeatedly.
+
+- **Data Validation**: You might consider adding more data validation steps (e.g., handling missing values) before training the logistic regression model.
+
