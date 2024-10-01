@@ -1,6 +1,7 @@
 Churn Analysis and Rediction on  WA_Fn-UseC_-Telco-Customer-Churn.csv
 
-##A streamlit Dashboard 
+**A streamlit Dashboard** 
+
 ![image](https://github.com/user-attachments/assets/4d765efb-7971-4fd2-a531-8ca076fc6211)
 
 1. **Dashboard Styling**:
